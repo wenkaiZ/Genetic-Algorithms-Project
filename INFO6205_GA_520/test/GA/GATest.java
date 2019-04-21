@@ -15,16 +15,16 @@ public class GATest {
 	 public static int maxGenerations = 1;
 	@Test
     public void test0() {
-		GeneticAlgorithm ga = new GeneticAlgorithm(2, 0.05, 1, 0.2, 0.8, 100);
+		GeneticAlgorithm ga = new GeneticAlgorithm(10, 0.05, 1, 0.2, 0.8, 100);
 		
         PrivateMethodTester pmt = new PrivateMethodTester(ga);
         Population population= (Population )pmt.invokePrivate("initPopulation",128);
-        assertEquals(2, population.size());
+        assertEquals(10, population.size());
     }
 	
 	@Test
     public void test1() {
-		GeneticAlgorithm ga = new GeneticAlgorithm(2, 0.05, 1, 0.2, 0.8, 100);
+		GeneticAlgorithm ga = new GeneticAlgorithm(10, 0.05, 1, 0.2, 0.8, 100);
 		
         PrivateMethodTester pmt = new PrivateMethodTester(ga);
         Population population= (Population )pmt.invokePrivate("initPopulation",128);
@@ -35,7 +35,7 @@ public class GATest {
 	
 	@Test
     public void test2() {
-		GeneticAlgorithm ga = new GeneticAlgorithm(2, 0.05, 1, 0.2, 0.8, 100);
+		GeneticAlgorithm ga = new GeneticAlgorithm(10, 0.05, 1, 0.2, 0.8, 100);
 		
         PrivateMethodTester pmt = new PrivateMethodTester(ga);
         Population population= (Population )pmt.invokePrivate("initPopulation",128);
@@ -51,7 +51,7 @@ public class GATest {
 	
 	@Test
     public void testFittness() {
-		GeneticAlgorithm ga = new GeneticAlgorithm(2, 0.05, 1, 0.2, 0.8, 100);
+		GeneticAlgorithm ga = new GeneticAlgorithm(10, 0.05, 1, 0.2, 0.8, 100);
 		
         PrivateMethodTester pmt = new PrivateMethodTester(ga);
         Population population= (Population )pmt.invokePrivate("initPopulation",128);
@@ -67,7 +67,7 @@ public class GATest {
 	
 	@Test
     public void testDead() {
-		GeneticAlgorithm ga = new GeneticAlgorithm(2, 0.05, 2, 0, 1, 100);
+		GeneticAlgorithm ga = new GeneticAlgorithm(10, 0.05, 2, 0, 1, 100);
 		
         PrivateMethodTester pmt = new PrivateMethodTester(ga);
         Population population= (Population )pmt.invokePrivate("initPopulation",128);
@@ -83,7 +83,7 @@ public class GATest {
 	
 	@Test
     public void testCrossOver() {
-		GeneticAlgorithm ga = new GeneticAlgorithm(2, 0.05, 2, 0, 1, 100);
+		GeneticAlgorithm ga = new GeneticAlgorithm(10, 0.05, 2, 0, 1, 100);
 		
         PrivateMethodTester pmt = new PrivateMethodTester(ga);
         Population population= (Population )pmt.invokePrivate("initPopulation",128);
@@ -96,7 +96,7 @@ public class GATest {
 	
 	@Test
     public void testMutation_Age() {
-		GeneticAlgorithm ga = new GeneticAlgorithm(2, 0.05, 2, 0, 1, 100);
+		GeneticAlgorithm ga = new GeneticAlgorithm(10, 0.05, 2, 0, 1, 100);
 		
         PrivateMethodTester pmt = new PrivateMethodTester(ga);
         Population population= (Population )pmt.invokePrivate("initPopulation",128);

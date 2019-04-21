@@ -31,7 +31,7 @@ public class ZebraController {
 
         });
 
-        GeneticAlgorithm ga = new GeneticAlgorithm(1000, 0.05, 10, 0.3, 0.7, 300);
+        GeneticAlgorithm ga = new GeneticAlgorithm(1000, 0.05, 10, 0.25, 0.75, 300);
         Population population = ga.initPopulation(128);
         
 
