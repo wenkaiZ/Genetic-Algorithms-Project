@@ -2,7 +2,7 @@ package GA;
 
 import java.util.ArrayList;
 
-public class Robot {
+public class Zebra {
     private enum Direction{NORTH,EAST,SOUTH,WEST};
     private int xPosition;
     private int yPosition;
@@ -13,7 +13,7 @@ public class Robot {
     private final int sensorActions[];
     private Maze maze;
     private ArrayList<int[]> route;
-    public Robot(int[] gene, Maze maze, int maxMoves){
+    public Zebra(int[] gene, Maze maze, int maxMoves){
         //the parameter gene determine actions
         this.sensorActions = this.calcSensorActions(gene);
         this.maze = maze;
@@ -226,6 +226,7 @@ public class Robot {
             int step[] = (int[]) routeStep;
             route += "{" + step[0] + "," + step[1] + "}";
         }
+        System.out.println(route);
         return route;
     }
 }

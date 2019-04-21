@@ -1,9 +1,7 @@
 package GA;
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.Random;
 
 public class Population {
@@ -30,9 +28,9 @@ public class Population {
         return this.population;
     }
     /*
-     *  priorityQueue
+     *  sort population by fitness with help of priorityQueue
      * */
-    public Individual getFittest(int offset){
+    public Individual getFittest(int index){
         
     	PriorityQueue<Individual> qi = new PriorityQueue<Individual>(population.length,new Comparator<Individual>(){
     		 
@@ -42,17 +40,17 @@ public class Population {
 			}});
 
            
-         Individual[] population_Sort = new Individual[offset+1];
+         Individual[] population_Sort = new Individual[index+1];
 
          for(int i = 0; i < population.length; i++){
     		 qi.add(population[i]);
          }
          
-    	 for(int j = 0; j <= offset; j++){
+    	 for(int j = 0; j <= index; j++){
     		 population_Sort[j] = qi.poll();
     	 }
          
-         return population_Sort[offset];
+         return population_Sort[index];
      }
     
     public double getPopulationFitness() {

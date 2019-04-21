@@ -30,9 +30,10 @@ public class GeneticAlgorithm {
     public double calcFitness(Individual individual, Maze maze) {
     	
         int[] chromosome = individual.getChromosome();
-        Robot robot = new Robot(chromosome, maze, walk);
-        robot.run();
-        int fitness = maze.scoreRoute(robot.getRoute());
+        Zebra zebra = new Zebra(chromosome, maze, walk);
+        zebra.run();
+        int fitness = maze.scoreRoute(zebra.getRoute());
+        //zebra.printRoute();
         individual.setFitness(fitness);
 
         return fitness;
@@ -103,13 +104,15 @@ public class GeneticAlgorithm {
                 
                 int swapPoint = (int) (Math.random() * (parent1.getChromosomeLength() + 1));
 
-                for (int geneIndex = 0; geneIndex < parent1.getChromosomeLength(); geneIndex++) {
+                for (int geneIndex = 0; geneIndex < parent1.getChromosomeLength(); geneIndex ++) {
                     
                     if (geneIndex < swapPoint) {
                         offspring.setGene(geneIndex, parent1.getGene(geneIndex));
                     } else {
                         offspring.setGene(geneIndex, parent2.getGene(geneIndex));
                     }
+
+
                 }
 
                
@@ -164,7 +167,7 @@ public class GeneticAlgorithm {
             Individual individual = population.getFittest(populationIndex);
             
             for (int geneIndex = 0; geneIndex < individual.getChromosomeLength(); geneIndex++) {
-            	if(Math.random() > 0.5){   
+            	if(Math.random() > 0.5){
 	                if(this.mutationRate>Math.random()){
 	                    int newGene = 1;
 	                    if(individual.getGene(geneIndex)==1){

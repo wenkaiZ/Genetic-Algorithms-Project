@@ -12,7 +12,7 @@ public class Maze {
     }
    
     public int[] getStartPosition(){
-       
+
         if(this.startPosition[0]!=-1&&this.startPosition[1]!=-1){
             return this.startPosition;
         }
@@ -59,6 +59,8 @@ public class Maze {
         int score = 0;
         boolean visited[][] = new boolean[this.getMaxY()+1][this.getMaxX()+1];
         for(int[] routeStep:route){
+            //when the entity steps on the right & not arrived position, then score.
+
             int step[] = (int[])routeStep;
             if(this.maze[step[1]][step[0]]==3 && visited[step[1]][step[0]]==false){
             	
