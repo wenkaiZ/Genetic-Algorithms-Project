@@ -44,7 +44,11 @@ public class ZebraController {
             
             Individual fittest = population.getFittest(0);
             
+<<<<<<< HEAD
             System.out.println( fittest.getFitness()  );
+=======
+            System.out.println(fittest.getFitness()  );
+>>>>>>> 77fc752951de130302873694da260b05a25c6e6c
             //+ fittest.toString()
             
             //Age +
